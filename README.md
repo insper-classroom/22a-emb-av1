@@ -42,55 +42,25 @@ A seguir detalhes do funcionamento:
 
 ![](diagrama.png)
 
-### Display OLED
 
-Exibe o tempo configurado pelo usuário, deve ser atualizado de segundo em segundo quando o micro-ondas estiver ligado. Por padrão deve exibir `00:00`.
-
-### Cronometro 
-
-Deve ser o valor configurado pelo usuário, sendo que o valor máximo do segundo deve ser 60 e do minuto 60. 
-
-### Botão de +5 segundos
-
-> - OLED BUTTON 3
-> - Acao na borda de descida 
-
-Adiciona 5 segundos ao cronometro.
- 
-### Botão de +10 segundos
-
-> - OLED BUTTON 2
-> - Acao na borda de descida 
-
-Adiciona 10 segundos ao cronometro.
-
-### Sensor de porta aberta
-
-> - OLED BUTTON 1
-> - Acao na borda de descida E subida
-
-Em qualquer momento se a portar do micro-ondas for aberta o sistema de potência deve parar. Junto com ele o contador de tempo, a luz interna deve acender.
-
-### Potência
-
-> - OLED LED 2
-> - Aceso: Micro-ondas ligado
-> - Apagado: Micro-ondas desligado
-
-### Luz interna
-
-> OLED LED 1
-
-A luz interna deve acender sempre que:
-
-- Micro-ondas ligado (sistema de potência)
-- Porta aberta
-
-### Buzzer
-
-> OLED LED 3
-
-Deve piscar até o usuário abrir a porta do micro-ondas, quando aberto o sistema deve parar de piscar.
+- **Display OLED:** Exibe o tempo configurado pelo usuário, deve ser atualizado de segundo em segundo quando o micro-ondas estiver ligado. Por padrão deve exibir `00:00`.
+- **Cronometro:** Deve ser o valor configurado pelo usuário, sendo que o valor máximo do segundo deve ser 60 e do minuto 60. 
+- **Botão de +5 segundos:** Adiciona 5 segundos ao cronometro.
+   - `OLED BUTTON 3`
+   - Ação na borda de descida 
+- **Botão de +10 segundos:** Adiciona 10 segundos ao cronometro.
+   - `OLED BUTTON 2`
+- **Sensor de porta aberta:** Em qualquer momento se a portar do micro-ondas for aberta o sistema de potência deve parar. Junto com ele o contador de tempo, a luz interna deve acender.
+    - `OLED BUTTON 1`
+    - Ação nas bordas: descida E subida
+- **Potência:** Indica que o micro-ondas está ligado
+    - `OLED LED 2`
+    - Aceso: Micro-ondas ligado
+    - Apagado: Micro-ondas desligado
+- **Luz interna:** É a luz interna do Micro-ondas, acesa sempre que a porta estiver aberta ou o micro-ondas ligado
+    - `OLED LED 1`
+- **Buzzer:** Deve piscar até o usuário abrir a porta do micro-ondas, quando aberto o sistema deve parar de piscar.
+    - `OLED LED 3`
 
 ## Extras
 
