@@ -64,7 +64,7 @@ Requisitos funcionais:
     - Apagado: Micro-ondas desligado
 - **Buzzer:** Deve piscar a uma frequência de 10Hz até o usuário abrir a porta do micro-ondas ou adicionar um novo tempo.
     - `OLED LED 3`
-- **Ligando o micro-ondas:** O Micro-ondas deve começar operar instantaneamente quando um valor de tempo estiver definido e a porta fechada.
+- **Ligando o micro-ondas:** O Micro-ondas deve começar operar instantaneamente quando um valor de tempo estiver definido (t > 0s) e a porta fechada.
 
 -------------------
 
