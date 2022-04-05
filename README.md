@@ -65,6 +65,12 @@ Requisitos funcionais:
     - `OLED LED 3`
 - **Ligando o micro-ondas:** O Micro-ondas deve começar operar instantaneamente quando um valor de tempo for configurado e a porta fechada.
 
+-------------------
+
+🎥 ⚠️ ❗ Assista o video no youtube: https://www.youtube.com/watch?v=_OgLylrLAV4&feature=youtu.be 🎥 ⚠️ ❗
+
+-------------------
+
 Requisitos de software:
 
 - Não atualiza OLED em IRQ
