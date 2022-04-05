@@ -36,32 +36,47 @@ A seguir iremos detalhar um pouco mais como deve ser feito o protótipo e o que 
 
 ## Micro-ondas
 
-O funcionamento do micro-ondar é similar com qualquer outro, o usuário primeiramente precisa acrescentar um tempo utilizando os botões de `+5 segundos` ou `+10 segundos` (botões 3 e 2 do OLED). Se o usuário não adicionar um tempo novo durante o período de 3 segundos e a porta estiver fechada, o microondas comeca funcionar. Isso é indicado pelo LED 2 da placa OLED, que informa que o sistema de potência. O sistema de potência deve ficar aceso pelo tempo em que o sistema ficar ligado, e deve desligar passado o tempo ou se a portar for aberta.
+O funcionamento do micro-ondar é similar com qualquer outro, o usuário primeiramente precisa acrescentar um tempo utilizando os botões de `+5 segundos` ou `+10 segundos` (botões 3 e 2 do OLED). O Micro-ondas liga instantaneamente depois do tempo configurado e somente se a porta estiver fechada. Oo LED 2 da placa OLED informa que o micro-ondas está ligado. O sistema de potência deve ficar aceso pelo tempo em que o sistema ficar ligado, e deve desligar passado o tempo ou se a portar for aberta.
 
 A seguir detalhes do funcionamento:
 
 ![](diagrama.png)
 
+Requisitos funcionais:
 
 - **Display OLED:** Exibe o tempo configurado pelo usuário, deve ser atualizado de segundo em segundo quando o micro-ondas estiver ligado. Por padrão deve exibir `00:00`.
-- **Cronometro:** Deve ser o valor configurado pelo usuário, sendo que o valor máximo do segundo deve ser 60 e do minuto 60. 
-- **Botão de +5 segundos:** Adiciona 5 segundos ao cronometro.
-   - `OLED BUTTON 3`
-   - Ação na borda de descida 
-- **Botão de +10 segundos:** Adiciona 10 segundos ao cronometro.
-   - `OLED BUTTON 2`
+- **Cronometro:** Deve ser o valor configurado pelo usuário, sendo que o valor máximo deve ser 60 minutos : 60 segundos. 
 - **Sensor de porta aberta:** Em qualquer momento se a portar do micro-ondas for aberta o sistema de potência deve parar. Junto com ele o contador de tempo, a luz interna deve acender.
     - `OLED BUTTON 1`
     - Ação nas bordas: descida E subida
+- **Botão de +10 segundos:** Adiciona 10 segundos ao cronometro, deve funcionar com o micro-ondas em operação.
+   - `OLED BUTTON 2`
+   - Ação na borda de descida 
+- **Botão de +5 segundos:** Adiciona 5 segundos ao cronometro, deve funcionar com o micro-ondas em operação.
+   - `OLED BUTTON 3`
+   - Ação na borda de descida 
+- **Luz interna:** É a luz interna do Micro-ondas, acesa sempre que a porta estiver aberta ou o micro-ondas ligado
+    - `OLED LED 1`
 - **Potência:** Indica que o micro-ondas está ligado
     - `OLED LED 2`
     - Aceso: Micro-ondas ligado
     - Apagado: Micro-ondas desligado
-- **Luz interna:** É a luz interna do Micro-ondas, acesa sempre que a porta estiver aberta ou o micro-ondas ligado
-    - `OLED LED 1`
-- **Buzzer:** Deve piscar até o usuário abrir a porta do micro-ondas, quando aberto o sistema deve parar de piscar.
+- **Buzzer:** Deve piscar a uma frequência de 10Hz até o usuário abrir a porta do micro-ondas ou adicionar um novo tempo.
     - `OLED LED 3`
+- **Ligando o micro-ondas:** O Micro-ondas deve começar operar instantaneamente quando um valor de tempo for configurado e a porta fechada.
+
+Requisitos de software:
+
+- Não atualiza OLED em IRQ
+- Todos os botões com IRQ
+- Lógica implementada na função main
+- Usar TC com 1hz para a contagem do cronometro
+- Usar TC para fazer o buzzer piscar após o fim do tempo
 
 ## Extras
 
-- Luz interna fica acesa por 15 segundos após o fim 
+- Código estruturado em funções.
+- Cancelar: Apertar os dois botões (+10 e + 5) ao mesmo tempo limpa o valor do cronometro.
+- O micro-ondas liga somente apos passado 3 segundos da configuração de um novo tempo (usar RTT).
+- Luz interna fica acesa por 15 segundos após o fim do tempo
+- Incremento rápido quando os botões ficarem pressionados
