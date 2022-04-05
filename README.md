@@ -26,7 +26,8 @@ Nesta avaliacão vocês vão desenvolver um protótipo de um controlador para um
 
 - Display OLED
 - Botão de +5 segundos
-- Botão de +30 segundos
+- Botão de +1
+- 0 segundos
 - Sensor de porta aberta
 - Controle da luz interna 
 - Sistema de potência
@@ -63,7 +64,7 @@ Requisitos funcionais:
     - Apagado: Micro-ondas desligado
 - **Buzzer:** Deve piscar a uma frequência de 10Hz até o usuário abrir a porta do micro-ondas ou adicionar um novo tempo.
     - `OLED LED 3`
-- **Ligando o micro-ondas:** O Micro-ondas deve começar operar instantaneamente quando um valor de tempo for configurado e a porta fechada.
+- **Ligando o micro-ondas:** O Micro-ondas deve começar operar instantaneamente quando um valor de tempo estiver definido e a porta fechada.
 
 -------------------
 
