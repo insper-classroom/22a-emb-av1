@@ -2,16 +2,12 @@
 
 - A prova é prática, com o objetivo de avaliar sua compreensão a cerca do conteúdo ministrado pela disciplina. 
 - É permitido consulta a todo material pessoal (suas anotações, códigos) e publico (github e internet), mas não pode consultar outros alunos.
-- **A cada 30 minutos você deverá fazer um commit no seu código!**
-    - Códigos que não tiverem commit a cada 30min ou que mudarem drasticamente entre os commits podem ter a entrega anulada.
-    - Tente inserir mensagens condizentes nos commits!
-- Duração total: 3h
+- **Lembre de a cada 30 minutos você deverá fazer um commit no seu código!**
+- Duração total: 2h + 1h extra
 
 !!! info
     Criar o repositório de entrega pelo link:
-    
-    - https://classroom.github.com........
-
+    - https://classroom.github.com/a/cFcTMHtX
 
     Use como base o código disponível neste repositório.
 
@@ -21,6 +17,8 @@ Você vai precisar:
 - ▶️ Conectar o OLED1 ao EXT-1
 
 ### Ideia geral
+
+![](https://images-americanas.b2w.io/produtos/01/00/img/4547754/7/4547754762_3SZ.jpg)
 
 Nesta avaliacão vocês vão desenvolver um protótipo de um controlador para um micro-ondas, que em linhas gerais irá possuir as seguintes interfaces:
 
