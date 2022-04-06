@@ -60,7 +60,7 @@ Requisitos funcionais:
     - `OLED LED 1`
 - **Potência:** Indica que o micro-ondas está ligado
     - `OLED LED 2`
-    - Aceso: Micro-ondas ligado
+    - [ ] Aceso: Micro-ondas ligado
     - Apagado: Micro-ondas desligado
 - **Buzzer:** Deve piscar a uma frequência de 10Hz até o usuário abrir a porta do micro-ondas ou adicionar um novo tempo.
     - `OLED LED 3`
@@ -80,10 +80,54 @@ Requisitos de software:
 - Usar TC com 1hz para a contagem do cronometro
 - Usar TC para fazer o buzzer piscar após o fim do tempo
 
-## Extras
+## Aumentando a nota
 
-- Código estruturado em funções.
-- Cancelar: Apertar os dois botões (+10 e + 5) ao mesmo tempo limpa o valor do cronometro.
-- O micro-ondas liga somente apos passado 3 segundos da configuração de um novo tempo (usar RTT).
-- Luz interna fica acesa por 15 segundos após o fim do tempo
-- Incremento rápido quando os botões ficarem pressionados
+Para aumentar a nota vocês devem seguir a tabela a seguir:
+
+| Nota | Itens                                         |
+|------|-----------------------------------------------|
+| C    | Requisitos do micro-ondas                     |
+| C+   | um item do básico                             |
+| B    | um item do avançado                           |
+| B+   | Um item do avançado e um item do básico       |
+| A    | Dois itens do avançado e um item do básico    |
+| A+   | Dois itens do avançado e dois itens do básico |
+
+## Básico 
+
+- B0: Incremento rápido quando os botões ficarem pressionados
+- B1: Adicionar forma de cancelar operação: Apertar os dois botões (+10 e + 5) ao mesmo tempo limpa o valor do cronometro e desliga o micro-ondas
+- B2: Código estruturado em funções:
+    ```
+    /**
+     * Incrementa contadores de minuto e segundo (p_minuto, p_segundo)
+     * dado um valor de incremento em segundos (inc_segundos)
+     *
+     * retorno: a função retorna se o incremento foi um sucesso ou não 
+     * (estourou o tempo)
+     **/
+     int inc_counters(int *p_minuto, int *p_segundo, int inc_segundos);
+    
+    
+     /**
+     * Decrementa contadores de minuto e segundo (p_minuto, p_segundo)
+     * dado um valor de decremento em segundos (dec_segundos)
+     *
+     * retorno: a função retorna se o decrementro foi um sucesso ou não 
+     * (00:00)
+     **/
+     int dec_counters(int *p_minuto, int *p_segundo, int dec_segundos);
+     
+     /**
+      * Atualiza OLED com os valores de minuto e segundo
+      **/
+      void update_oled(int minuto, segundo);
+    ```
+    
+## Avançado
+
+Implemente fazendo uso do periférico RTT.
+
+- A0: Luz interna fica acesa por apenas 15 segundos após o fim do tempo (usar RTT).
+- A1: Buzzer apita por 10 segundos e fica 10 segundos sem apitar, repete o ciclo (usar RTT)
+- A2: O micro-ondas liga somente após passado 3 segundos da configuração de um novo tempo (usar RTT).
