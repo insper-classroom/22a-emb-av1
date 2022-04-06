@@ -2,14 +2,13 @@
 
 - A prova é prática, com o objetivo de avaliar sua compreensão a cerca do conteúdo ministrado pela disciplina. 
 - É permitido consulta a todo material pessoal (suas anotações, códigos) e publico (github e internet), mas não pode consultar outros alunos.
-- **Lembre de a cada 30 minutos você deverá fazer um commit no seu código!**
+- **Lembre que e' boa prática a cada 30 minutos fazer um commit no seu código! **
 - Duração total: 2h + 1h extra
 
-!!! info
-    Criar o repositório de entrega pelo link:
-    - https://classroom.github.com/a/cFcTMHtX
-
-    Use como base o código disponível neste repositório.
+>  Criar o repositório de entrega pelo link:
+>  - https://classroom.github.com/a/cFcTMHtX
+>
+>  Use como base o código disponível neste repositório.
 
 Você vai precisar:
 
@@ -18,17 +17,16 @@ Você vai precisar:
 
 ### Ideia geral
 
-![](https://images-americanas.b2w.io/produtos/01/00/img/4547754/7/4547754762_3SZ.jpg)
+![](https://m.media-amazon.com/images/I/81Qlt6DNbCL._AC_SX522_.jpg)
 
 Nesta avaliacão vocês vão desenvolver um protótipo de um controlador para um micro-ondas, que em linhas gerais irá possuir as seguintes interfaces:
 
 - Display OLED
 - Botão de +5 segundos
-- Botão de +1
-- 0 segundos
+- Botão de +10 segundos
 - Sensor de porta aberta
 - Controle da luz interna 
-- Sistema de potência
+- Sistema de potência (liga micro-ondas)
 - Buzzer 
 
 A seguir iremos detalhar um pouco mais como deve ser feito o protótipo e o que estará sendo avaliado.
@@ -80,18 +78,19 @@ Requisitos de software:
 
 ## Aumentando a nota
 
-Para aumentar a nota vocês devem seguir a tabela a seguir:
+Para aumentar a nota vocês devem fazer os itens extras
+seguindo a tabela a seguir:
 
 | Nota | Itens                                         |
 |------|-----------------------------------------------|
 | C    | Requisitos do micro-ondas                     |
-| C+   | um item do básico                             |
-| B    | um item do avançado                           |
+| C+   | Um item do básico                             |
+| B    | Um item do avançado                           |
 | B+   | Um item do avançado e um item do básico       |
 | A    | Dois itens do avançado e um item do básico    |
 | A+   | Dois itens do avançado e dois itens do básico |
 
-## Básico 
+## Extra básico 
 
 - B0: Incremento rápido quando os botões ficarem pressionados
 - B1: Adicionar forma de cancelar operação: Apertar os dois botões (+10 e + 5) ao mesmo tempo limpa o valor do cronometro e desliga o micro-ondas
@@ -105,7 +104,6 @@ Para aumentar a nota vocês devem seguir a tabela a seguir:
      * (estourou o tempo)
      **/
      int inc_counters(int *p_minuto, int *p_segundo, int inc_segundos);
-    
     
      /**
      * Decrementa contadores de minuto e segundo (p_minuto, p_segundo)
@@ -122,7 +120,7 @@ Para aumentar a nota vocês devem seguir a tabela a seguir:
       void update_oled(int minuto, segundo);
     ```
     
-## Avançado
+## Extra avançado
 
 Implemente fazendo uso do periférico RTT.
 
