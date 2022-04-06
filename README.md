@@ -2,7 +2,7 @@
 
 - A prova é prática, com o objetivo de avaliar sua compreensão a cerca do conteúdo ministrado pela disciplina. 
 - É permitido consulta a todo material pessoal (suas anotações, códigos) e publico (github e internet), mas não pode consultar outros alunos.
-- **Lembre que e' boa prática a cada 30 minutos fazer um commit no seu código! **
+- **Lembre que e' boa prática a cada 30 minutos fazer um commit no seu código!**
 - Duração total: 2h + 1h extra
 
 >  Criar o repositório de entrega pelo link:
@@ -75,6 +75,12 @@ Requisitos de software:
 - Lógica implementada na função main
 - Usar TC com 1hz para a contagem do cronometro
 - Usar TC para fazer o buzzer piscar após o fim do tempo
+
+## Entrega
+
+Fazer um commit e push no repositório e preencher o formulário a seguir:
+
+📰 https://forms.gle/Km3EaeCuPNZaYqBB8
 
 ## Aumentando a nota
 
